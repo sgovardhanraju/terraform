@@ -24,3 +24,15 @@ output "ami_id" {
 data "aws_instance" "mongodb" {
     instance_id = "i-0ccd8bd5f09e1d90d"
 }
+
+output "mongodb_info" {
+    value = data.aws_instance.mongodb
+}
+
+output "mongodb_publicip" {
+    value = data.aws_instance.mongodb.public_ip
+}
+
+output "mongodb_privateip" {
+    value = data.aws_instance.mongodb.private_ip
+}
